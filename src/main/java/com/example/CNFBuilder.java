@@ -137,6 +137,7 @@ public class CNFBuilder extends PropositionalLogicBaseVisitor<FormulaNode> {
             rep = variableRep.get(var);
         } else {
             rep = repId++;
+            variableRep.put(var, rep);
         }
         FormulaNode node = new FormulaNode(rep, Collections.emptyList());
         return node;

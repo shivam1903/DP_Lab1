@@ -101,5 +101,14 @@ public class CNFBuilderTest {
             System.out.println(clause);
         }
     }
+    
+    @Test
+    public void test_repeated_variable() {
+        ParseTree tree = getTree(" P & !P ");
+        CNFBuilder builder = new CNFBuilder();
+        FormulaNode res = builder.visit(tree);
+        assertEquals(6, res.clauses.size());
+        assertEquals(3, res.rep);
+    }
 
 }
