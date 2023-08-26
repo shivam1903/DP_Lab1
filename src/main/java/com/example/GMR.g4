@@ -15,7 +15,7 @@ expression : iff_expression;
 
 iff_expression : implies_expression (IFF iff_expression)?;
 
-implies_expression : or_expression (IMPLIES implies_expression)?;
+implies_expression : or_expression (IMPLIES implies_expression)?; // TODO: why '?" is used instead of '*' ?
 
 or_expression : and_expression (OR and_expression)*;
 
