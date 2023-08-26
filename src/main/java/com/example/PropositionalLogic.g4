@@ -1,7 +1,7 @@
 grammar PropositionalLogic;
 
 
-formula : subformula;
+formula : subformula EOF;
 
 subformula : '(' subformula ')' #Parenthesis
            | <assoc=right> '!' subformula   #Not

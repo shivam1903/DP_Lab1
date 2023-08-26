@@ -1,7 +1,5 @@
 package com.example;
 
-import java.sql.Array;
-import java.text.Normalizer.Form;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,6 +13,7 @@ import com.example.PropositionalLogicParser.NotContext;
 import com.example.PropositionalLogicParser.OrContext;
 import com.example.PropositionalLogicParser.ParenthesisContext;
 import com.example.PropositionalLogicParser.VariableContext;
+
 
 public class CNFBuilder extends PropositionalLogicBaseVisitor<FormulaNode> {
 

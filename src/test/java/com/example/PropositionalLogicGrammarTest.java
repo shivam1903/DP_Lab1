@@ -12,6 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import com.example.PropositionalLogicParser.AndContext;
+import com.example.PropositionalLogicParser.FormulaContext;
 import com.example.PropositionalLogicParser.IffContext;
 import com.example.PropositionalLogicParser.ImplyContext;
 import com.example.PropositionalLogicParser.NotContext;
@@ -22,13 +23,11 @@ import com.example.PropositionalLogicParser.VariableContext;
 
 public class PropositionalLogicGrammarTest {
 
-    private ParseTree getTree(String input) {
-
+    private ParseTree getTree(String input) {    
         PropositionalLogicLexer lexer = new PropositionalLogicLexer(CharStreams.fromString(input));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         PropositionalLogicParser parser = new PropositionalLogicParser(tokens);
         return parser.formula();
-
     }
 
     @ParameterizedTest
@@ -91,6 +90,11 @@ class PostfixConverter extends PropositionalLogicBaseVisitor<String> {
     @Override
     public String visitVariable(VariableContext ctx) {
         return ctx.getText();
+    }
+
+    @Override
+    public String visitFormula(FormulaContext ctx) {
+        return visit(ctx.subformula());
     }
 
 }
