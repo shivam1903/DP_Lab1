@@ -62,8 +62,12 @@ public class CNFBuilder extends PropositionalLogicBaseVisitor<FormulaNode> {
     public FormulaNode visitFormula(FormulaContext ctx) {
         FormulaNode f1 = visit(ctx.subformula());
 
-        f1.clauses.add(Integer.toString(f1.rep) + " 0");
-        return f1;
+        int myRep = f1.rep;
+        List<String> myClause = new ArrayList<>();
+        myClause.add(Integer.toString(myRep) + " 0");
+        myClause.addAll(f1.clauses);
+
+        return new FormulaNode(myRep, myClause);
     }
 
     @Override

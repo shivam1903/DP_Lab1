@@ -111,4 +111,13 @@ public class CNFBuilderTest {
         assertEquals(3, res.rep);
     }
 
+    @Test
+    public void test_single_variable() {
+        ParseTree tree = getTree(" P ");
+        CNFBuilder builder = new CNFBuilder();
+        FormulaNode res = builder.visit(tree);
+        assertEquals(1, res.clauses.size());
+        assertEquals(1, res.rep);
+    }
+
 }
