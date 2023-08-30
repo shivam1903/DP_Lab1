@@ -1,5 +1,8 @@
 # DP_Lab1
-This is the github repo for Decision Procedure Course, Lab -1
+This is the github repo for Decision Procedure Course, Lab -1.
+Team Members: 
+1. Puneet Kumar - puneet23067@iiitd.ac.in
+2. Shivam Agrawal - shivam20124@iiitd.ac.in
 
 # Pre-requisites
 You should have mvn and Java 11 or a later version installed on your machine. Verify using:
